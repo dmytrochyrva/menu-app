@@ -1,10 +1,31 @@
+@font-face {
+    font-family: 'Barlow';
+    src: url('./fonts/Barlow-Regular.ttf');
+}
+
+$main-text: #ffffff;
+$second-text: #ABBBC2;
 $main-black: #1F1D2B;
 $second-black: #252836;
 $primary-color: #EA7C69;
-$transparent-primary: rgba(234, 124, 105, 0.32);
+$border-color: #393C49;
+$form-background: #2D303E;
+$transparent-primary: #ea7c6952;
 
-@mixin flexCenter{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body{
+    padding: 10px;
+    color: $main-text;
+    background: gray;
+}
+
+h1{
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 140%;
+}
+p {
+    color: $second-text;
+    font-weight: thin;
+    font-size: 16px;
+    line-height: 140%;
 }

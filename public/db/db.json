@@ -3,63 +3,63 @@
         "id": "0e04cb",
         "price": 2.29,
         "available": 20,
-        "image": "./img/image.png",
+        "image": "./db/img/image.png",
         "name": "Spicy seasoned seafood noodles"
     },
     {
         "id": "7e981d",
         "price": 2.69,
         "available": 11,
-        "image": "./img/image1.png",
+        "image": "./db/img/image1.png",
         "name": "Salted Pasta with mushroom sauce"
     },
     {
         "id": "65cda0",
         "price": 2.99,
         "available": 16,
-        "image": "./img/image2.png",
+        "image": "./db/img/image2.png",
         "name": "Beef dumpling in hot and sour soup"
     },
     {
         "id": "cab283",
         "price": 3.29,
         "available": 22,
-        "image": "./img/image3.png",
+        "image": "./db/img/image3.png",
         "name": "Healthy noodle with spinach leaf"
     },
     {
         "id": "843099",
         "price": 3.49,
         "available": 13,
-        "image": "./img/image4.png",
+        "image": "./db/img/image4.png",
         "name": "Hot spicy fried rice with omelet"
     },
     {
         "id": "7e5b78",
         "price": 3.59,
         "available": 17,
-        "image": "./img/image5.png",
-        "name": "Hot spicy fried rice with omelet"
+        "image": "./db/img/image5.png",
+        "name": "Spicy instant noodle with special omelette"
     },
     {
         "id": "55300a",
         "price": 4.59,
         "available": 14,
-        "image": "./img/image1.png",
-        "name": "Hot spicy fried rice with omelet"
+        "image": "./db/img/image1.png",
+        "name": "Cold fried rice with omelet"
     },
     {
         "id": "1361cf",
         "price": 2.59,
         "available": 11,
-        "image": "./img/image4.png",
-        "name": "Hot spicy fried rice with omelet"
+        "image": "./db/img/image4.png",
+        "name": "Fried rice with omelet"
     },
     {
         "id": "0c9112",
         "price": 1.59,
         "available": 8,
-        "image": "./img/image3.png",
-        "name": "Hot spicy fried rice with omelet"
+        "image": "./db/img/image3.png",
+        "name": "Noodle with omelette"
     }
 ]

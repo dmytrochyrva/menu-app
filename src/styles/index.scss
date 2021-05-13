@@ -1,11 +1,14 @@
 @import 'reset';
 @import 'config';
+@import 'mixins';
 
 .app {
+    display: flex;
     width: 1194px;
     height: 834px;
     border-radius: 16px;
     background: $second-black;
 }
 
-@import './components/sidebar'
+@import './components/sidebar';
+@import './components/home';

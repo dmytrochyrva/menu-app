@@ -1,0 +1,32 @@
+.menu{
+    width: 681px;
+    padding: 24px;
+
+    .header{
+        @include flexCenterBetween();
+
+        .text{
+            h1{
+                margin:0.2px 0 2.7px 0;
+                letter-spacing: 0.25px;
+            }
+        }
+
+        form{
+            width: 220px;
+            padding: 0 13px;
+            @include formElement();
+            background: $form-background;
+            @include flexCenterBetween();
+
+            input{
+                width: 164px;
+                border: none;
+                outline: none;
+                background: none;
+                color: $main-text;
+                font-size: 14px;
+            }
+        }
+    }
+}

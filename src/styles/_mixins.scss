@@ -1,0 +1,13 @@
+@mixin flexCenterBetween{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin formElement{
+    height: 48px;
+    font-size: 14px;
+    line-height: 140%;
+    border-radius: 8px;
+    border: 1px solid $border-color;
+}

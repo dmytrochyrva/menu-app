@@ -2,13 +2,12 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  user-select: none;
+  font-family: "Barlow";
   box-sizing: border-box;
 }
 
-body {
-  padding: 10px;
-}
-
+input,
 button {
   border: none;
   outline: none;
@@ -16,7 +15,31 @@ button {
   background: none;
 }
 
+@font-face {
+  font-family: "Barlow";
+  src: url("./fonts/Barlow-Regular.ttf");
+}
+body {
+  padding: 10px;
+  color: #ffffff;
+  background: gray;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+}
+
+p {
+  color: #ABBBC2;
+  font-weight: thin;
+  font-size: 16px;
+  line-height: 140%;
+}
+
 .app {
+  display: flex;
   width: 1194px;
   height: 834px;
   border-radius: 16px;
@@ -43,7 +66,7 @@ button {
   border-radius: 8px;
 }
 .sidebar > li:first-child button {
-  background: rgba(234, 124, 105, 0.32);
+  background: #ea7c6952;
 }
 .sidebar .menuButtons {
   gap: 22px;
@@ -66,7 +89,7 @@ button {
 }
 .sidebar .menuButtons li.active button {
   background: #EA7C69;
-  box-shadow: -8px 8px 24px rgba(234, 124, 105, 0.32);
+  box-shadow: -8px 8px 24px #ea7c6952;
 }
 .sidebar .menuButtons li.active button path {
   fill: #fff;
@@ -95,4 +118,39 @@ button {
 .sidebar .menuButtons li.active::after {
   bottom: -12px;
   border-radius: 0 12px 0 0;
+}
+
+.menu {
+  width: 681px;
+  padding: 24px;
+}
+.menu .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu .header .text h1 {
+  margin: 0.2px 0 2.7px 0;
+  letter-spacing: 0.25px;
+}
+.menu .header form {
+  width: 220px;
+  padding: 0 13px;
+  height: 48px;
+  font-size: 14px;
+  line-height: 140%;
+  border-radius: 8px;
+  border: 1px solid #393C49;
+  background: #2D303E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu .header form input {
+  width: 164px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #ffffff;
+  font-size: 14px;
 }
