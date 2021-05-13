@@ -1,5 +1,98 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
+}
+
+body {
+  padding: 10px;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
+
+.app {
+  width: 1194px;
+  height: 834px;
+  border-radius: 16px;
+  background: #252836;
+}
+
+.sidebar {
+  width: 104px;
+  height: 100%;
+  display: flex;
+  padding: 24px 0;
+  align-items: center;
+  border-radius: 16px;
+  flex-direction: column;
+  background: #1F1D2B;
+  justify-content: space-between;
+}
+.sidebar svg {
+  transform: translateY(1.5px);
+}
+.sidebar button {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+}
+.sidebar > li:first-child button {
+  background: rgba(234, 124, 105, 0.32);
+}
+.sidebar .menuButtons {
+  gap: 22px;
+  display: flex;
+  position: relative;
+  padding-bottom: 32px;
+  flex-direction: column;
+}
+.sidebar .menuButtons path {
+  fill: #EA7C69;
+}
+.sidebar .menuButtons li {
+  cursor: pointer;
+  position: relative;
+  padding: 13px 12px 11px 12px;
+}
+.sidebar .menuButtons li.active {
+  background: #252836;
+  border-radius: 12px 0 0 12px;
+}
+.sidebar .menuButtons li.active button {
+  background: #EA7C69;
+  box-shadow: -8px 8px 24px rgba(234, 124, 105, 0.32);
+}
+.sidebar .menuButtons li.active button path {
+  fill: #fff;
+}
+.sidebar .menuButtons li.active span {
+  top: -12px;
+  right: -12px;
+  width: 12px;
+  height: 104px;
+  position: absolute;
+  background: #252836;
+}
+.sidebar .menuButtons li.active::after, .sidebar .menuButtons li.active::before {
+  z-index: 1;
+  content: "";
+  width: 12px;
+  height: 12px;
+  right: -12px;
+  position: absolute;
+  background: #1F1D2B;
+}
+.sidebar .menuButtons li.active::before {
+  top: -12px;
+  border-radius: 0 0 12px 0;
+}
+.sidebar .menuButtons li.active::after {
+  bottom: -12px;
+  border-radius: 0 12px 0 0;
 }

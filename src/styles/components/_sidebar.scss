@@ -1,0 +1,86 @@
+.sidebar {
+    width: 104px;
+    height: 100%;
+    display: flex;
+    padding: 24px 0;
+    align-items: center;
+    border-radius: 16px;
+    flex-direction: column;
+    background: $main-black;
+    justify-content: space-between;
+
+    svg {
+        transform: translateY(1.5px);
+    }
+
+    button{
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+    }
+
+    & > li:first-child button {
+
+        background: $transparent-primary;
+    }
+
+    .menuButtons {
+        gap: 22px;
+        display: flex;
+        position: relative;
+        padding-bottom: 32px;
+        flex-direction: column;
+
+        path{
+            fill: $primary-color;
+        }
+
+        li {
+            cursor: pointer;
+            position: relative;
+            padding:13px 12px 11px 12px;
+
+            &.active{
+                background: $second-black;
+                border-radius: 12px 0 0 12px;
+
+                button{
+                    background: $primary-color;
+                    box-shadow: -8px 8px 24px $transparent-primary;
+
+                    path{fill: #fff;}
+                }
+
+                span{
+                    top: -12px;
+                    right: -12px;
+                    width: 12px;
+                    height: 104px;
+                    position: absolute;
+                    background: $second-black;
+                }
+
+                &::after,
+                &::before {
+                    z-index: 1;
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    right: -12px;
+                    position: absolute;
+                    background: $main-black;
+                }
+
+                &::before{
+                    top: -12px;
+                    border-radius:0 0 12px 0;
+                }
+
+                &::after{
+                    bottom: -12px;
+                    border-radius:0 12px 0 0;
+                }
+            }
+        }
+    }
+}

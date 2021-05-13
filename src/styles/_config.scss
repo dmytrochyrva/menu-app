@@ -1,0 +1,10 @@
+$main-black: #1F1D2B;
+$second-black: #252836;
+$primary-color: #EA7C69;
+$transparent-primary: rgba(234, 124, 105, 0.32);
+
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
