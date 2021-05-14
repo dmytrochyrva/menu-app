@@ -1,6 +1,9 @@
 .menu{
+    gap: 24px;
     width: 681px;
     padding: 24px;
+    display: flex;
+    flex-direction: column;
 
     .header{
         @include flexCenterBetween();
@@ -26,6 +29,96 @@
                 background: none;
                 color: $main-text;
                 font-size: 14px;
+            }
+        }
+    }
+
+    .filters{
+        .categories {
+            gap: 33px;
+            display: flex;
+
+            li {
+                height: 33px;
+                min-width: 36.5px;
+
+                button {
+                    color: $main-text;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 140%;
+                    margin-top: 1.5px;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+
+                    &.active{
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+
+        .rating{
+            @include flexCenterBetween();
+            margin-top: 24px;
+
+            select{
+                width: 100px;
+                height: 48px;
+                appearance: none;
+                color: $main-text;
+                border-radius: 8px;
+                background: $main-black;
+                border: 1px solid $border-color;
+            }
+        }
+    }
+    .dishList{
+        gap: 24px 28px;
+        display: grid;
+        height: 592px;
+        overflow: scroll;
+        grid-template-columns: repeat(3, 1fr) ;
+
+        .dishCard{
+            width: 192px;
+            height: 260px;
+            cursor: pointer;
+            position: relative;
+
+            img{
+                right: 30px;
+                position: absolute;
+                clip-path: circle(66px at 66px 66px);
+            }
+
+            .card{
+                width: 100%;
+                height: 226px;
+                margin-top: 34px;
+                border-radius: 16px;
+                padding-top: 115px;
+                background: $main-black;
+
+                .text{
+                    margin: 0 auto;
+                    max-width:140px;
+                    text-align: center;
+
+                    h3 {
+                        margin-bottom: 8px;
+                    }
+
+                    h4 {
+                        margin-bottom: 4px;
+                    }
+
+                    h4:nth-child(3){
+                        color: $second-text;
+                    }
+                }
             }
         }
     }

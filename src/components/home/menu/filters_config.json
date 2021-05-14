@@ -1,0 +1,28 @@
+{
+    "categories": [
+        {
+            "id": "sk35kl",
+            "name": "Hot Dishes"
+        },
+        {
+            "id": "aslk39",
+            "name": "Cold Dishes"
+        },
+        {
+            "id": "etiwer",
+            "name": "Soup"
+        },
+        {
+            "id": "weoptw",
+            "name": "Grill"
+        },
+        {
+            "id": "qpitwe",
+            "name": "Appetizer"
+        },
+        {
+            "id": "twncio",
+            "name": "Dessert"
+        }
+    ]
+}

@@ -1,17 +1,28 @@
 import { useState } from 'react';
 import Header from './menu/Header';
+import Filters from './menu/Filters';
+import Dishlist from './menu/Dishlist';
 
 const Menu = ({ page, dishes }) => {
-  const [filteredDishes, setFilteredDishes] = useState([]);
+  const [filteredDishes, setFilteredDishes] = useState();
 
   return (
-    <main className="menu" hidden={page !== 'home'}>
-      <Header
-        dishes={dishes}
-        setFilteredDishes={setFilteredDishes}
-        filteredDishes={filteredDishes}
-      />
-    </main>
+    <section hidden={page !== 'home'}>
+      <div className="menu">
+        <Header
+          dishes={dishes}
+          setFilteredDishes={setFilteredDishes}
+          filteredDishes={filteredDishes}
+        />
+
+        <Filters
+          dishes={dishes}
+          setFilteredDishes={setFilteredDishes}
+        />
+
+        <Dishlist dishes={filteredDishes || dishes} />
+      </div>
+    </section>
   );
 };
 

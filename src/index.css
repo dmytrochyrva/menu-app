@@ -15,6 +15,21 @@ button {
   background: none;
 }
 
+hr {
+  height: 1px;
+  border: none;
+  background: white;
+}
+
+select {
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: "Barlow";
   src: url("./fonts/Barlow-Regular.ttf");
@@ -31,11 +46,35 @@ h1 {
   line-height: 140%;
 }
 
+h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 140%;
+}
+
 p {
   color: #ABBBC2;
   font-weight: thin;
   font-size: 16px;
   line-height: 140%;
+}
+
+hr {
+  background: #393C49;
 }
 
 .app {
@@ -121,8 +160,11 @@ p {
 }
 
 .menu {
+  gap: 24px;
   width: 681px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
 }
 .menu .header {
   display: flex;
@@ -153,4 +195,80 @@ p {
   background: none;
   color: #ffffff;
   font-size: 14px;
+}
+.menu .filters .categories {
+  gap: 33px;
+  display: flex;
+}
+.menu .filters .categories li {
+  height: 33px;
+  min-width: 36.5px;
+}
+.menu .filters .categories li button {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  margin-top: 1.5px;
+}
+.menu .filters .categories li button:hover {
+  color: #EA7C69;
+}
+.menu .filters .categories li button.active {
+  color: #EA7C69;
+}
+.menu .filters .rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.menu .filters .rating select {
+  width: 100px;
+  height: 48px;
+  appearance: none;
+  color: #ffffff;
+  border-radius: 8px;
+  background: #1F1D2B;
+  border: 1px solid #393C49;
+}
+.menu .dishList {
+  gap: 24px 28px;
+  display: grid;
+  height: 592px;
+  overflow: scroll;
+  grid-template-columns: repeat(3, 1fr);
+}
+.menu .dishList .dishCard {
+  width: 192px;
+  height: 260px;
+  cursor: pointer;
+  position: relative;
+}
+.menu .dishList .dishCard img {
+  right: 30px;
+  position: absolute;
+  clip-path: circle(66px at 66px 66px);
+}
+.menu .dishList .dishCard .card {
+  width: 100%;
+  height: 226px;
+  margin-top: 34px;
+  border-radius: 16px;
+  padding-top: 115px;
+  background: #1F1D2B;
+}
+.menu .dishList .dishCard .card .text {
+  margin: 0 auto;
+  max-width: 140px;
+  text-align: center;
+}
+.menu .dishList .dishCard .card .text h3 {
+  margin-bottom: 8px;
+}
+.menu .dishList .dishCard .card .text h4 {
+  margin-bottom: 4px;
+}
+.menu .dishList .dishCard .card .text h4:nth-child(3) {
+  color: #ABBBC2;
 }
