@@ -1,9 +1,9 @@
 .menu{
     gap: 24px;
     width: 681px;
-    padding: 24px;
     display: flex;
     flex-direction: column;
+    padding: 24px 24px 0 24px;
 
     .header{
         @include flexCenterBetween();

@@ -35,8 +35,6 @@ select {
   src: url("./fonts/Barlow-Regular.ttf");
 }
 body {
-  padding: 10px;
-  color: #ffffff;
   background: gray;
 }
 
@@ -81,6 +79,7 @@ hr {
   display: flex;
   width: 1194px;
   height: 834px;
+  color: #ffffff;
   border-radius: 16px;
   background: #252836;
 }
@@ -162,9 +161,9 @@ hr {
 .menu {
   gap: 24px;
   width: 681px;
-  padding: 24px;
   display: flex;
   flex-direction: column;
+  padding: 24px 24px 0 24px;
 }
 .menu .header {
   display: flex;
