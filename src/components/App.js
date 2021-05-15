@@ -5,17 +5,19 @@ import Menu from './home/Menu';
 function App() {
   const [page, setPage] = useState('home');
   const [dishes, setDishes] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  console.log(isLoading);
 
   useEffect(() => {
-    setIsLoading(true);
-    fetch('./db/db.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setDishes(data);
-        setIsLoading(false);
-      })
-      .catch((err) => console.log(err));
+    setTimeout(() => {
+      fetch('./db/db.json')
+        .then((res) => res.json())
+        .then((data) => {
+          setDishes(data);
+          setIsLoading(false);
+        })
+        .catch((err) => console.log(err));
+    }, 2000);
   }, []);
 
   return (

@@ -199,9 +199,11 @@ hr {
 .menu .filters .categories {
   gap: 33px;
   display: flex;
+  position: relative;
 }
 .menu .filters .categories li {
   height: 33px;
+  cursor: pointer;
   min-width: 36.5px;
 }
 .menu .filters .categories li button {
@@ -214,8 +216,16 @@ hr {
 .menu .filters .categories li button:hover {
   color: #EA7C69;
 }
-.menu .filters .categories li button.active {
+.menu .filters .categories li.active button {
   color: #EA7C69;
+}
+.menu .filters .categories li.active span {
+  height: 3px;
+  width: 37px;
+  bottom: -2px;
+  border-radius: 3px;
+  position: absolute;
+  background: #EA7C69;
 }
 .menu .filters .rating {
   display: flex;
@@ -233,9 +243,9 @@ hr {
   border: 1px solid #393C49;
 }
 .menu .dishList {
-  gap: 24px 28px;
   display: grid;
   height: 592px;
+  gap: 24px 28px;
   overflow: scroll;
   grid-template-columns: repeat(3, 1fr);
 }

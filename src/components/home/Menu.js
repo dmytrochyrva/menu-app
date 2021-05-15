@@ -3,7 +3,7 @@ import Header from './menu/Header';
 import Filters from './menu/Filters';
 import Dishlist from './menu/Dishlist';
 
-const Menu = ({ page, dishes }) => {
+const Menu = ({ page, dishes, isLoading }) => {
   const [filteredDishes, setFilteredDishes] = useState();
 
   return (
@@ -17,10 +17,11 @@ const Menu = ({ page, dishes }) => {
 
         <Filters
           dishes={dishes}
+          isLoading={isLoading}
           setFilteredDishes={setFilteredDishes}
         />
 
-        <Dishlist dishes={filteredDishes || dishes} />
+        <Dishlist dishes={filteredDishes || dishes} isLoading={isLoading} />
       </div>
     </section>
   );

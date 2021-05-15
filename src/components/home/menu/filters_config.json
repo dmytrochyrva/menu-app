@@ -2,27 +2,33 @@
     "categories": [
         {
             "id": "sk35kl",
-            "name": "Hot Dishes"
+            "name": "Hot Dishes",
+            "category": "hot_dishes"
         },
         {
             "id": "aslk39",
-            "name": "Cold Dishes"
+            "name": "Cold Dishes",
+            "category": "cold_dishes"
         },
         {
             "id": "etiwer",
-            "name": "Soup"
+            "name": "Soup",
+            "category": "soup"
         },
         {
             "id": "weoptw",
-            "name": "Grill"
+            "name": "Grill",
+            "category": "grill"
         },
         {
             "id": "qpitwe",
-            "name": "Appetizer"
+            "name": "Appetizer",
+            "category": "appetizer"
         },
         {
             "id": "twncio",
-            "name": "Dessert"
+            "name": "Dessert",
+            "category": "dessert"
         }
     ]
 }

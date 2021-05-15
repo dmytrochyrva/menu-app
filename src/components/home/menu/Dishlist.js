@@ -1,8 +1,10 @@
 import DishCard from './DishCard';
 
-const Dishlist = ({ dishes }) => (
+const Dishlist = ({ dishes, isLoading }) => (
   <ul className="dishList">
-    {dishes.map((dish) => <DishCard key={dish.id} dish={dish} />)}
+    {isLoading ? <h1>Loading...</h1> : dishes.map((dish) => {
+      return <DishCard key={dish.id} dish={dish} />;
+    })}
   </ul>
 );
 

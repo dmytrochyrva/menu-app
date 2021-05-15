@@ -24,7 +24,7 @@ const Sidebar = ({ setPage, page }) => (
 
     <Button
       setPage={setPage}
-      page={exitBtn.page}
+      page={exitBtn.page && page}
       Img={i[exitBtn.img]}
     />
   </ul>

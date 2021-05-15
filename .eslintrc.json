@@ -21,6 +21,7 @@
         "no-console": "off",
         "linebreak-style": "off",
         "react/prop-types": "off",
+        "arrow-body-style": "off",
         "react/button-has-type": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": "off",

@@ -37,9 +37,11 @@
         .categories {
             gap: 33px;
             display: flex;
+            position: relative;
 
             li {
                 height: 33px;
+                cursor: pointer;
                 min-width: 36.5px;
 
                 button {
@@ -52,10 +54,17 @@
                     &:hover {
                         color: $primary-color;
                     }
-
-                    &.active{
-                        color: $primary-color;
-                    }
+                }
+                &.active button {
+                    color: $primary-color;
+                }
+                &.active span {
+                    height: 3px;
+                    width: 37px;
+                    bottom: -2px;
+                    border-radius: 3px;
+                    position: absolute;
+                    background: $primary-color;
                 }
             }
         }
@@ -76,9 +85,9 @@
         }
     }
     .dishList{
-        gap: 24px 28px;
         display: grid;
         height: 592px;
+        gap: 24px 28px;
         overflow: scroll;
         grid-template-columns: repeat(3, 1fr) ;
 
