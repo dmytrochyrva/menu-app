@@ -5,7 +5,7 @@ import ratingConfig from './rating_config.json';
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 const Select = ({ setRating }) => {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState('All');
+  const [selected, setSelected] = useState('Popular');
 
   return (
     <div className="select" onClick={() => setOpen(!open)}>

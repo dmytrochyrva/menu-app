@@ -7,10 +7,9 @@ import Dishlist from './menu/Dishlist';
 const Menu = ({ page, dishes, isLoading }) => {
   // const [filteredDishes, setFilteredDishes] = useState();
   const [symbols, setSymbols] = useState('');
-  const [rating, setRating] = useState('all');
+  const [rating, setRating] = useState('popular');
   const [category, setCategory] = useState('hot_dishes');
   const [shownDishes, setShownDishes] = useState(dishes);
-  console.log(rating);
 
   const filterDishes = () => {
     let result = dishes;
