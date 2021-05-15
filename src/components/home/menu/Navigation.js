@@ -1,6 +1,6 @@
 import navConfig from './nav_config.json';
 
-const Filters = ({ setShownCategory, shownCategory }) => {
+const Navigation = ({ setShownCategory, shownCategory }) => {
   const { navigationBtns } = navConfig;
 
   return (
@@ -21,4 +21,4 @@ const Filters = ({ setShownCategory, shownCategory }) => {
   );
 };
 
-export default Filters;
+export default Navigation;

@@ -32,6 +32,7 @@
             }
         }
     }
+
     .navigation {
             gap: 33px;
             display: flex;
@@ -68,6 +69,7 @@
             }
 
     }
+
     .ratingFilter{
         @include flexCenterBetween();
 
@@ -81,11 +83,12 @@
             border: 1px solid $border-color;
         }
     }
+
     .dishList{
         display: grid;
-        height: 592px;
         gap: 24px 28px;
         overflow: scroll;
+        max-height: 591px;
         grid-template-columns: repeat(3, 1fr) ;
 
         .dishCard{
