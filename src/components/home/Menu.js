@@ -1,27 +1,30 @@
 import { useState } from 'react';
 import Header from './menu/Header';
-import Filters from './menu/Filters';
+import Navigation from './menu/Navigation';
+import RatingFilter from './menu/RatingFilter';
 import Dishlist from './menu/Dishlist';
 
 const Menu = ({ page, dishes, isLoading }) => {
   const [filteredDishes, setFilteredDishes] = useState();
+  const [shownCategory, setShownCategory] = useState('hot_dishes');
 
   return (
     <section hidden={page !== 'home'}>
       <div className="menu">
         <Header
-          dishes={dishes}
-          setFilteredDishes={setFilteredDishes}
+          dishes={dishes[shownCategory]}
           filteredDishes={filteredDishes}
-        />
-
-        <Filters
-          dishes={dishes}
-          isLoading={isLoading}
           setFilteredDishes={setFilteredDishes}
         />
 
-        <Dishlist dishes={filteredDishes || dishes} isLoading={isLoading} />
+        <Navigation
+          shownCategory={shownCategory}
+          setShownCategory={setShownCategory}
+        />
+
+        <RatingFilter />
+
+        <Dishlist dishes={filteredDishes || dishes[shownCategory]} isLoading={isLoading} />
       </div>
     </section>
   );

@@ -5,10 +5,12 @@ import Menu from './home/Menu';
 function App() {
   const [page, setPage] = useState('home');
   const [dishes, setDishes] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
 
   useEffect(() => {
+    setIsLoading(true);
+
     setTimeout(() => {
       fetch('./db/db.json')
         .then((res) => res.json())
@@ -23,6 +25,7 @@ function App() {
   return (
     <div className="app">
       <Sidebar setPage={setPage} page={page} />
+
       <Menu page={page} dishes={dishes} isLoading={isLoading} />
     </div>
   );

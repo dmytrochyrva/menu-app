@@ -196,30 +196,31 @@ hr {
   color: #ffffff;
   font-size: 14px;
 }
-.menu .filters .categories {
+.menu .navigation {
   gap: 33px;
   display: flex;
   position: relative;
+  border-bottom: 1px solid #393C49;
 }
-.menu .filters .categories li {
+.menu .navigation li {
   height: 33px;
   cursor: pointer;
   min-width: 36.5px;
 }
-.menu .filters .categories li button {
+.menu .navigation li button {
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
   line-height: 140%;
   margin-top: 1.5px;
 }
-.menu .filters .categories li button:hover {
+.menu .navigation li button:hover {
   color: #EA7C69;
 }
-.menu .filters .categories li.active button {
+.menu .navigation li.active button {
   color: #EA7C69;
 }
-.menu .filters .categories li.active span {
+.menu .navigation li.active span {
   height: 3px;
   width: 37px;
   bottom: -2px;
@@ -227,13 +228,12 @@ hr {
   position: absolute;
   background: #EA7C69;
 }
-.menu .filters .rating {
+.menu .ratingFilter {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 24px;
 }
-.menu .filters .rating select {
+.menu .ratingFilter select {
   width: 100px;
   height: 48px;
   appearance: none;

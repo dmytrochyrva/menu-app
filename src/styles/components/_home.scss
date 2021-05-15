@@ -32,12 +32,11 @@
             }
         }
     }
-
-    .filters{
-        .categories {
+    .navigation {
             gap: 33px;
             display: flex;
             position: relative;
+            border-bottom: 1px solid $border-color;
 
             li {
                 height: 33px;
@@ -67,21 +66,19 @@
                     background: $primary-color;
                 }
             }
-        }
 
-        .rating{
-            @include flexCenterBetween();
-            margin-top: 24px;
+    }
+    .ratingFilter{
+        @include flexCenterBetween();
 
-            select{
-                width: 100px;
-                height: 48px;
-                appearance: none;
-                color: $main-text;
-                border-radius: 8px;
-                background: $main-black;
-                border: 1px solid $border-color;
-            }
+        select{
+            width: 100px;
+            height: 48px;
+            appearance: none;
+            color: $main-text;
+            border-radius: 8px;
+            background: $main-black;
+            border: 1px solid $border-color;
         }
     }
     .dishList{
