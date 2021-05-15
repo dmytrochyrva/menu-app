@@ -7,6 +7,7 @@ import Dishlist from './menu/Dishlist';
 const Menu = ({ page, dishes, isLoading }) => {
   const [filteredDishes, setFilteredDishes] = useState();
   const [shownCategory, setShownCategory] = useState('hot_dishes');
+  const [rating, setRating] = useState('All');
 
   return (
     <section hidden={page !== 'home'}>
@@ -22,7 +23,7 @@ const Menu = ({ page, dishes, isLoading }) => {
           setShownCategory={setShownCategory}
         />
 
-        <RatingFilter />
+        <RatingFilter rating={rating} setRating={setRating} />
 
         <Dishlist dishes={filteredDishes || dishes[shownCategory]} isLoading={isLoading} />
       </div>

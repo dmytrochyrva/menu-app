@@ -6,7 +6,6 @@ function App() {
   const [page, setPage] = useState('home');
   const [dishes, setDishes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
 
   useEffect(() => {
     setIsLoading(true);

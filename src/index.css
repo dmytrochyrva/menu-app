@@ -232,14 +232,36 @@ hr {
   align-items: center;
   justify-content: space-between;
 }
-.menu .ratingFilter select {
+.menu .ratingFilter .select {
+  margin-right: 1px;
+}
+.menu .ratingFilter .select .selected {
+  display: flex;
   width: 100px;
   height: 48px;
-  appearance: none;
+  padding: 0 14px;
+  cursor: pointer;
   color: #ffffff;
+  position: relative;
   border-radius: 8px;
+  align-items: center;
   background: #1F1D2B;
   border: 1px solid #393C49;
+}
+.menu .ratingFilter .select .options {
+  z-index: 1;
+  width: 100px;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 8px;
+  background: #1F1D2B;
+}
+.menu .ratingFilter .select .options h4 {
+  cursor: pointer;
+  padding: 10px 14px;
+}
+.menu .ratingFilter .select .options h4:hover {
+  opacity: 0.5;
 }
 .menu .dishList {
   display: grid;
