@@ -1,31 +1,58 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './menu/Header';
 import Navigation from './menu/Navigation';
 import RatingFilter from './menu/RatingFilter';
 import Dishlist from './menu/Dishlist';
 
 const Menu = ({ page, dishes, isLoading }) => {
-  const [filteredDishes, setFilteredDishes] = useState();
-  const [shownCategory, setShownCategory] = useState('hot_dishes');
-  const [rating, setRating] = useState('All');
+  // const [filteredDishes, setFilteredDishes] = useState();
+  const [symbols, setSymbols] = useState('');
+  const [rating, setRating] = useState('all');
+  const [category, setCategory] = useState('hot_dishes');
+  const [shownDishes, setShownDishes] = useState(dishes);
+  console.log(rating);
+
+  const filterDishes = () => {
+    let result = dishes;
+
+    if (symbols) {
+      result = result.filter((item) => {
+        return item.name.toLowerCase().includes(symbols);
+      });
+    }
+
+    if (category) {
+      result = result.filter((item) => {
+        return item.category === category;
+      });
+    }
+
+    if (rating === 'cheap') {
+      result = result.sort((a, b) => {
+        return a.price - b.price;
+      });
+    }
+
+    setShownDishes(result);
+  };
+
+  useEffect(() => filterDishes(), [symbols, rating, category, isLoading]);
 
   return (
     <section hidden={page !== 'home'}>
       <div className="menu">
         <Header
-          dishes={dishes[shownCategory]}
-          filteredDishes={filteredDishes}
-          setFilteredDishes={setFilteredDishes}
+          setSymbols={setSymbols}
         />
 
         <Navigation
-          shownCategory={shownCategory}
-          setShownCategory={setShownCategory}
+          category={category}
+          setCategory={setCategory}
         />
 
-        <RatingFilter rating={rating} setRating={setRating} />
+        <RatingFilter setRating={setRating} />
 
-        <Dishlist dishes={filteredDishes || dishes[shownCategory]} isLoading={isLoading} />
+        <Dishlist dishes={shownDishes} isLoading={isLoading} />
       </div>
     </section>
   );

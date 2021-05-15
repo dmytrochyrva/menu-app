@@ -1,35 +1,32 @@
 import { useState } from 'react';
 import SelectArrow from './SelectArrow';
+import ratingConfig from './rating_config.json';
 
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-const Select = ({ rating, setRating }) => {
+const Select = ({ setRating }) => {
   const [open, setOpen] = useState(false);
-  const options = [
-    {
-      id: 1,
-      name: 'All',
-    },
-    {
-      id: 2,
-      name: 'Popular',
-    },
-    {
-      id: 3,
-      name: 'Cheap',
-    },
-  ];
+  const [selected, setSelected] = useState('All');
+
   return (
     <div className="select" onClick={() => setOpen(!open)}>
       <div className="selected">
         <SelectArrow />
 
-        <h4>{rating}</h4>
+        <h4>{selected}</h4>
       </div>
 
       <ul className="options">
-        {open && options.map((option) => {
+        {open && ratingConfig.filter((option) => {
+          return option.name !== selected;
+        }).map((option) => {
           return (
-            <li key={option.id} onClick={() => setRating(option.name)}>
+            <li
+              key={option.id}
+              onClick={() => {
+                setRating(option.value);
+                setSelected(option.name);
+              }}
+            >
               <h4>{option.name}</h4>
             </li>
           );

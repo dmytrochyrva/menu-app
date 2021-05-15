@@ -1,13 +1,6 @@
 import Search from '../svg/Search';
 
-const Header = ({ dishes, setFilteredDishes }) => {
-  const filterHendler = (event) => {
-    const value = event.target.value.toLowerCase();
-    const filtered = dishes.filter((dish) => dish.name.toLowerCase().includes(value));
-
-    setFilteredDishes(filtered);
-  };
-
+const Header = ({ setSymbols }) => {
   return (
     <div className="header">
       <div className="text">
@@ -17,7 +10,7 @@ const Header = ({ dishes, setFilteredDishes }) => {
 
       <form
         className="search"
-        onInput={filterHendler}
+        onInput={({ target }) => setSymbols(target.value.toLowerCase())}
         onSubmit={(event) => event.preventDefault()}
       >
         <Search />

@@ -1,6 +1,6 @@
 import navConfig from './nav_config.json';
 
-const Navigation = ({ setShownCategory, shownCategory }) => {
+const Navigation = ({ setCategory, category }) => {
   const { navigationBtns } = navConfig;
 
   return (
@@ -8,8 +8,8 @@ const Navigation = ({ setShownCategory, shownCategory }) => {
       {navigationBtns.map((btn) => (
         <li
           key={btn.id}
-          onClick={() => setShownCategory(btn.category)}
-          className={shownCategory === btn.category ? 'active' : ''}
+          onClick={() => setCategory(btn.category)}
+          className={category === btn.category ? 'active' : ''}
         >
 
           <button>{btn.name}</button>
