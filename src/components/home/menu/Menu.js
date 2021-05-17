@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import Header from './menu/Header';
-import Navigation from './menu/Navigation';
-import RatingFilter from './menu/RatingFilter';
-import Dishlist from './menu/Dishlist';
+import Header from './Header';
+import Navigation from './Navigation';
+import RatingFilter from './RatingFilter';
+import Dishlist from './Dishlist';
 
-const Menu = ({ page, dishes, isLoading }) => {
+const Menu = ({
+  dishes, isLoading, setOrders, orders,
+}) => {
   // const [filteredDishes, setFilteredDishes] = useState();
   const [symbols, setSymbols] = useState('');
   const [rating, setRating] = useState('popular');
@@ -38,22 +40,25 @@ const Menu = ({ page, dishes, isLoading }) => {
   useEffect(() => filterDishes(), [symbols, rating, category, isLoading]);
 
   return (
-    <section hidden={page !== 'home'}>
-      <div className="menu">
-        <Header
-          setSymbols={setSymbols}
-        />
+    <div className="menu">
+      <Header
+        setSymbols={setSymbols}
+      />
 
-        <Navigation
-          category={category}
-          setCategory={setCategory}
-        />
+      <Navigation
+        category={category}
+        setCategory={setCategory}
+      />
 
-        <RatingFilter setRating={setRating} />
+      <RatingFilter setRating={setRating} />
 
-        <Dishlist dishes={shownDishes} isLoading={isLoading} />
-      </div>
-    </section>
+      <Dishlist
+        orders={orders}
+        dishes={shownDishes}
+        setOrders={setOrders}
+        isLoading={isLoading}
+      />
+    </div>
   );
 };
 

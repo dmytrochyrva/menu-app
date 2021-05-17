@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import Sidebar from './sidebar/Sidebar';
-import Menu from './home/Menu';
+import Home from './home/Home';
 
 function App() {
   const [page, setPage] = useState('home');
   const [dishes, setDishes] = useState([]);
+  const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -25,7 +26,13 @@ function App() {
     <div className="app">
       <Sidebar setPage={setPage} page={page} />
 
-      <Menu page={page} dishes={dishes} isLoading={isLoading} />
+      <Home
+        page={page}
+        dishes={dishes}
+        orders={orders}
+        setOrders={setOrders}
+        isLoading={isLoading}
+      />
     </div>
   );
 }

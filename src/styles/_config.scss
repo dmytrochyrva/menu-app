@@ -9,6 +9,7 @@ $main-black: #1F1D2B;
 $second-black: #252836;
 $primary-color: #EA7C69;
 $border-color: #393C49;
+$dangerous-color:#FF7CA3;
 $form-background: #2D303E;
 $transparent-primary: #ea7c6952;
 
@@ -49,4 +50,20 @@ p {
 
 hr {
     background: $border-color;
+}
+button{
+    color: $main-text;
+}
+
+input[type="number"]{
+    width: 48px;
+    padding: 0 10px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+}
+input{
+    color: $main-text;
 }

@@ -27,3 +27,11 @@ select{
 ::-webkit-scrollbar{
     display: none;
 }
+input{
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+         margin: 0;
+    }
+    -moz-appearance: textfield;
+}
