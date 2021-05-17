@@ -1,17 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Options from './Options';
-import ListItem from './ListItem';
+import OrderList from './OrderList';
 
-const Order = ({ orders, setOrders }) => {
+const Order = ({
+  orders, setOrders, setOpenPayment, openPayment,
+}) => {
   const [option, setOption] = useState('dine_in');
-  const [subtotal, setSubtotal] = useState(0);
 
-  useEffect(() => {
-    setSubtotal(0);
-    if (orders.length) {
-      orders.forEach((ord) => setSubtotal((subtotal + ord.price * ord.portions)));
-    }
-  }, [orders]);
+  const handleClick = () => {
+    setOpenPayment(!openPayment);
+  };
 
   return (
     <div className="order">
@@ -19,37 +17,14 @@ const Order = ({ orders, setOrders }) => {
 
       <Options setOption={setOption} option={option} />
 
-      <div className="orderList">
-        <div className="header">
-          <p>Item</p>
-          <p>Qty</p>
-          <p>Price</p>
-        </div>
+      <OrderList orders={orders} setOrders={setOrders} />
 
-        <ul className="list">
-          {orders.map((order) => {
-            return (
-              <ListItem
-                order={order}
-                key={order.id}
-                orders={orders}
-                setOrders={setOrders}
-              />
-            );
-          })}
-        </ul>
-
-        <div className="footer">
-          <div className="row">
-            <h4>Discount</h4>
-            <p>$0</p>
-          </div>
-          <div className="row">
-            <h4>Subtotal</h4>
-            <p>{`$${subtotal.toFixed(2)}`}</p>
-          </div>
-        </div>
-      </div>
+      <button
+        className="pay"
+        onClick={handleClick}
+      >
+        Continue To Payment
+      </button>
     </div>
   );
 };

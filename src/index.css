@@ -379,7 +379,17 @@ input {
   flex: 2.5;
   text-align: left;
 }
-.home .order .orderList .list {
+.home .order .pay {
+  height: 48px;
+  font-size: 14px;
+  margin-top: 19px;
+  font-weight: 600;
+  line-height: 140%;
+  border-radius: 8px;
+  background: #EA7C69;
+  box-shadow: 0px 8px 24px #ea7c6952;
+}
+.home .list {
   gap: 24px;
   display: flex;
   height: 454px;
@@ -389,42 +399,42 @@ input {
   border-top: 1px solid #393C49;
   border-bottom: 1px solid #393C49;
 }
-.home .order .orderList .listItem {
+.home .listItem {
   display: grid;
   gap: 10px 16px;
   align-items: center;
   grid-template-columns: 5fr 1fr 1fr;
 }
-.home .order .orderList .listItem .description {
+.home .listItem .description {
   gap: 8px;
   flex: 2.5;
   display: flex;
   align-items: center;
 }
-.home .order .orderList .listItem .description img {
+.home .listItem .description img {
   width: 40px;
   clip-path: circle(20px at 20px 20px);
 }
-.home .order .orderList .listItem .description h3 {
+.home .listItem .description h3 {
   margin: 6px 0;
   line-height: 110%;
 }
-.home .order .orderList .listItem .description h3:last-child {
+.home .listItem .description h3:last-child {
   font-size: 12px;
   color: #ABBBC2;
 }
-.home .order .orderList .listItem .total {
+.home .listItem .total {
   font-size: 16px;
   text-align: right;
 }
-.home .order .orderList .listItem .comment {
+.home .listItem .comment {
   grid-column: 1/3;
 }
-.home .order .orderList .listItem .comment input {
+.home .listItem .comment input {
   width: 100%;
   padding: 14px;
 }
-.home .order .orderList .listItem input {
+.home .listItem input {
   height: 48px;
   font-size: 14px;
   line-height: 140%;
@@ -432,25 +442,87 @@ input {
   border: 1px solid #393C49;
   background: #252836;
 }
-.home .order .orderList .listItem button {
+.home .listItem button {
   width: 48px;
   height: 48px;
   border-radius: 8px;
   border: 1px solid #FF7CA3;
 }
-.home .order .orderList .footer {
+.home .footer {
   gap: 16px;
   display: flex;
   flex-direction: column;
 }
-.home .order .orderList .footer .row {
+.home .footer .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.home .order .orderList .footer .row h4 {
+.home .footer .row h4 {
   color: #ABBBC2;
 }
-.home .order .orderList .footer .row p {
+.home .footer .row p {
   color: #ffffff;
+}
+.home .paySection {
+  top: 0;
+  right: 0;
+  z-index: 2;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+}
+.home .paySection .content {
+  width: 814px;
+  height: 834px;
+  display: flex;
+  border-radius: 16px;
+  background: #1F1D2B;
+}
+.home .paySection .content .open {
+  max-width: 814px;
+}
+.home .paySection .content .closed {
+  max-width: 0px;
+}
+.home .paySection .content .confirmation {
+  width: 409px;
+  padding: 24px;
+}
+.home .paySection .content .confirmation .list {
+  height: 544px;
+  padding: 24px 0;
+}
+.home .paySection .content::before {
+  content: "";
+  top: 0;
+  left: -380px;
+  width: 380px;
+  height: 834px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+}
+.home .payment {
+  width: 406px;
+  padding: 24px;
+}
+.home .payment .control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home .payment .control .btn {
+  width: 175px;
+  height: 48px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  border-radius: 8px;
+}
+.home .payment .control .confirm {
+  background-color: #EA7C69;
+}
+.home .payment .control .cancel {
+  color: #EA7C69;
+  border: 1px solid #EA7C69;
 }

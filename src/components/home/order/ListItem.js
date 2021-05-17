@@ -29,7 +29,7 @@ const ListItem = ({ order, orders, setOrders }) => {
           <h3>
             {`${order.name.slice(0, 20)} ...`}
           </h3>
-          <h3>{order.price}</h3>
+          <h3>{`$ ${order.price}`}</h3>
         </div>
       </div>
 
