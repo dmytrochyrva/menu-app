@@ -1,13 +1,17 @@
 /* eslint-disable no-param-reassign */
+import { useState } from 'react';
 import TrashCan from '../svg/TrashCan';
 
 const ListItem = ({ order, orders, setOrders }) => {
+  const [totalCost, setTotalCost] = useState(order.price);
+
   const handleCommentChange = ({ target }) => {
     order.comment = target.value;
   };
 
   const handlePortionsChange = ({ target }) => {
     order.portions = Number(target.value);
+    setTotalCost(order.price * order.portions);
   };
 
   const deletePosition = () => {
@@ -34,10 +38,15 @@ const ListItem = ({ order, orders, setOrders }) => {
         onChange={handlePortionsChange}
         onSubmit={(event) => event.preventDefault()}
       >
-        <input type="number" placeholder={order.portions} />
+        <input
+          min="1"
+          type="number"
+          placeholder={order.portions}
+          max={order.available}
+        />
       </form>
 
-      <h4>Total Price</h4>
+      <h4 className="total">{`$${totalCost.toFixed(2)}`}</h4>
 
       <form
         className="comment"

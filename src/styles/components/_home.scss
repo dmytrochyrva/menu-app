@@ -229,6 +229,7 @@
             .listItem {
                 display: grid;
                 gap: 10px 16px;
+                align-items: center;
                 grid-template-columns: 5fr 1fr 1fr;
 
                 .description{
@@ -252,6 +253,10 @@
                         }
                     }
                 }
+                .total{
+                    font-size: 16px;
+                    text-align: right;
+                }
                 .comment {
                     input{
                         width: 100%;
@@ -270,6 +275,22 @@
                     height: 48px;
                     border-radius: 8px;
                     border: 1px solid $dangerous-color;
+                }
+            }
+
+            .footer{
+                gap: 16px;
+                display: flex;
+                flex-direction: column;
+                .row{
+                    @include flexCenterBetween();
+
+                    h4{
+                        color: $second-text;
+                    }
+                    p{
+                        color: $main-text;
+                    }
                 }
             }
         }

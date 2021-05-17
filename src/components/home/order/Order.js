@@ -1,9 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Options from './Options';
 import ListItem from './ListItem';
 
 const Order = ({ orders, setOrders }) => {
   const [option, setOption] = useState('dine_in');
+  const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    setSubtotal(0);
+    if (orders.length) {
+      orders.forEach((ord) => setSubtotal((subtotal + ord.price * ord.portions)));
+    }
+  }, [orders]);
 
   return (
     <div className="order">
@@ -32,13 +40,13 @@ const Order = ({ orders, setOrders }) => {
         </ul>
 
         <div className="footer">
-          <div>
-            <span>hello</span>
-            <span>hello</span>
+          <div className="row">
+            <h4>Discount</h4>
+            <p>$0</p>
           </div>
-          <div>
-            <span>hello</span>
-            <span>hello</span>
+          <div className="row">
+            <h4>Subtotal</h4>
+            <p>{`$${subtotal.toFixed(2)}`}</p>
           </div>
         </div>
       </div>
