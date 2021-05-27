@@ -43,6 +43,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   src: url("./fonts/Barlow-Regular.ttf");
 }
 body {
+  padding: 20px;
   background: gray;
 }
 
@@ -106,6 +107,7 @@ input {
   width: 1194px;
   height: 834px;
   color: #ffffff;
+  position: relative;
   border-radius: 16px;
   background: #252836;
 }
@@ -501,16 +503,16 @@ input {
   position: absolute;
   background: rgba(0, 0, 0, 0.7);
 }
-.home .payment {
+.home .paySection .payment {
   width: 406px;
   padding: 24px;
 }
-.home .payment .control {
+.home .paySection .payment .control {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.home .payment .control .btn {
+.home .paySection .payment .control .btn {
   width: 175px;
   height: 48px;
   font-style: normal;
@@ -519,10 +521,10 @@ input {
   line-height: 140%;
   border-radius: 8px;
 }
-.home .payment .control .confirm {
+.home .paySection .payment .control .confirm {
   background-color: #EA7C69;
 }
-.home .payment .control .cancel {
+.home .paySection .payment .control .cancel {
   color: #EA7C69;
   border: 1px solid #EA7C69;
 }

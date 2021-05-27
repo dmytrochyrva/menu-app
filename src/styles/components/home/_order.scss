@@ -1,0 +1,66 @@
+.order{
+    gap: 24px;
+    width: 409px;
+    height: 834px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    background: $main-black;
+    border-radius: 0 16px 16px 0;
+
+    h2 {
+        letter-spacing: 0.2px;
+    }
+
+    .options {
+        gap: 8px;
+        display: flex;
+
+        button{
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: $primary-color;
+            letter-spacing: 0.1px;
+            border: 1px solid $border-color;
+        }
+
+        li.active button {
+            color: $main-text;
+            background: $primary-color;
+            border-color: $primary-color;
+        }
+    }
+
+    .orderList {
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+
+        .header {
+            display: flex;
+
+            p {
+                &:first-child{
+                    flex:2.5;
+                    text-align:left;
+                }
+
+                flex: 1;
+                text-align:right;
+                font-weight: 600;
+                color: $main-text;
+            }
+        }
+    }
+
+    .pay{
+        height: 48px;
+        font-size: 14px;
+        margin-top: 19px;
+        font-weight: 600;
+        line-height: 140%;
+        border-radius: 8px;
+        background: $primary-color;
+        box-shadow: 0px 8px 24px $transparent-primary;
+    }
+}

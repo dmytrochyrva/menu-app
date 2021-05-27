@@ -1,5 +1,4 @@
-import ListItem from '../order/ListItem';
-import BackArrow from '../svg/BackArrow';
+import Confirmation from './Confimation';
 
 const PaymentMenu = ({
   orders, setOrders, openPayment, setOpenPayment,
@@ -11,39 +10,11 @@ const PaymentMenu = ({
   return (
     <section className="paySection" hidden={!openPayment}>
       <div className={openPayment ? 'open content' : ' content closed'}>
-        <div className="confirmation">
-          <button className="back" onClick={handleClosePayment}>
-            <BackArrow />
-          </button>
-
-          <div className="header">
-            <h1>Confirmation</h1>
-          </div>
-
-          <ul className="list">
-            {orders.map((order) => {
-              return (
-                <ListItem
-                  order={order}
-                  key={order.id}
-                  orders={orders}
-                  setOrders={setOrders}
-                />
-              );
-            })}
-          </ul>
-
-          <div className="footer">
-            <div className="row">
-              <h4>Discount</h4>
-              <p>$0</p>
-            </div>
-            <div className="row">
-              <h4>Subtotal</h4>
-              <p>$0</p>
-            </div>
-          </div>
-        </div>
+        <Confirmation
+          orders={orders}
+          setOrders={setOrders}
+          handleClosePayment={handleClosePayment}
+        />
 
         <div className="payment">
           <h1>Payment</h1>

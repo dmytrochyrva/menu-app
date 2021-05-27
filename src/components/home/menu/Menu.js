@@ -14,7 +14,7 @@ const Menu = ({
   const [shownDishes, setShownDishes] = useState(dishes);
 
   const filterDishes = () => {
-    let result = dishes;
+    let result = [...dishes];
 
     if (symbols) {
       result = result.filter((item) => {
