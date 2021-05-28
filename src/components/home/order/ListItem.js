@@ -1,17 +1,38 @@
 /* eslint-disable no-param-reassign */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TrashCan from '../svg/TrashCan';
 
 const ListItem = ({ order, orders, setOrders }) => {
   const [totalCost, setTotalCost] = useState(order.price);
 
-  const handleCommentChange = ({ target }) => {
-    order.comment = target.value;
-  };
+  useEffect(() => {
+    setTotalCost(order.portions * order.price);
+  }, [orders]);
 
-  const handlePortionsChange = ({ target }) => {
-    order.portions = Number(target.value);
-    setTotalCost(order.price * order.portions);
+  const handleFormChange = ({ target }) => {
+    if (target.name === 'portions'
+        && target.value > order.available
+    ) {
+      target.value = order.portions;
+      return;
+    }
+
+    if (target.value === '0') {
+      target.value = 1;
+      return;
+    }
+
+    const newOrders = orders.map((orderItem) => {
+      if (orderItem.id === order.id) {
+        return {
+          ...orderItem,
+          [target.name]: target.value,
+        };
+      }
+      return orderItem;
+    });
+
+    setOrders(newOrders);
   };
 
   const deletePosition = () => {
@@ -35,12 +56,13 @@ const ListItem = ({ order, orders, setOrders }) => {
 
       <form
         className="portions"
-        onChange={handlePortionsChange}
+        onChange={handleFormChange}
         onSubmit={(event) => event.preventDefault()}
       >
         <input
           min="1"
           type="number"
+          name="portions"
           placeholder={order.portions}
           max={order.available}
         />
@@ -50,10 +72,10 @@ const ListItem = ({ order, orders, setOrders }) => {
 
       <form
         className="comment"
-        onChange={handleCommentChange}
+        onChange={handleFormChange}
         onSubmit={(event) => event.preventDefault()}
       >
-        <input type="text" placeholder="Order Note..." />
+        <input name="comment" type="text" placeholder={order.comment || 'Order Note...'} />
       </form>
 
       <button onClick={deletePosition}>
