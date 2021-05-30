@@ -5,8 +5,6 @@ const OrderList = ({ orders, setOrders }) => {
   const [subtotal, setSubtotal] = useState(0);
 
   useEffect(() => {
-    setSubtotal(0);
-
     if (orders.length) {
       orders.forEach((order) => setSubtotal(subtotal + order.price * order.portions));
     }

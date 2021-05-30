@@ -1,0 +1,174 @@
+.paySection{
+    top: 0;
+    right: 0;
+    z-index: 2;
+    position: absolute;
+    background: $back-filter;
+
+    .content{
+        width: 814px;
+        height: 834px;
+        display: flex;
+        border-radius: 16px;
+        background: $main-black;
+
+        .open{
+            max-width: 814px;
+        }
+
+        .closed{
+            max-width: 0px;
+        }
+
+        .confirmation{
+            gap: 24px;
+            width: 409px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+
+            .back {
+                margin-bottom: 14px;
+            }
+
+            .top-control {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h1{
+                    margin-bottom: 8px;
+                    letter-spacing: 0.3px;
+                }
+
+                .add-order{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 8px;
+                    background: $primary-color;
+                    transform: translateY(-3px);
+                }
+            }
+
+            .list{
+                height: 544px;
+                padding: 24px 0;
+            }
+
+            .footer{
+                p{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 130%;
+                }
+            }
+        }
+
+        &::before{
+            content: '';
+            top: 0;
+            left: -380px;
+            width: 380px;
+            height: 834px;
+            position: absolute;
+            background: $back-filter;
+        }
+
+        .payment{
+            gap: 24px;
+            width: 409px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid $border-color;
+    
+            .header{
+                margin-top: 40px;
+
+                h1{
+                    margin-bottom: 8px;
+                }
+            }
+
+            .payment-form{
+                gap: 16px;
+                display: flex;
+                flex-direction: column;
+                .divider{
+                    margin-top: 8px;
+                }
+
+                .payment-methods{
+                    gap: 8px;
+                    display: flex;
+
+                    button{
+                        width: 101px;
+                        height: 64px;
+                        border-radius: 8px;
+                        border: 1px solid $border-color;
+
+                        
+                    }
+                }
+                label{
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 130%;
+                }
+
+                input {
+                    width: 100%;
+                    display: block;
+                    margin-top: 8px;
+                    padding: 0 14px;
+                    background: $form-background;
+                    @include formElement();
+                }
+                
+                select{
+                    width: 173px;
+                    display: block;
+                    padding: 0 14px;
+                    margin-top: 8px;
+                    color: $main-text;
+                    background: $main-black;
+                    @include formElement();
+                }
+
+                .flex {
+                    gap: 13px;
+                    display: flex;
+                }                      
+            }
+
+            .control{
+                margin-top: 65px;
+                @include flexCenterBetween();
+    
+                .btn{
+                    width: 175px;
+                    height: 48px;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 140%;
+                    border-radius: 8px;
+                }
+    
+                .confirm{
+                    background-color: $primary-color;
+                }
+                .cancel{
+                    color: $primary-color;
+                    border: 1px solid $primary-color;
+                }
+            }
+        }
+    }
+}

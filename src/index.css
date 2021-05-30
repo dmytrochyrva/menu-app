@@ -43,7 +43,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   src: url("./fonts/Barlow-Regular.ttf");
 }
 body {
-  padding: 20px;
   background: gray;
 }
 
@@ -54,14 +53,12 @@ h1 {
 }
 
 h2 {
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
 }
 
 h3 {
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 130%;
@@ -92,7 +89,6 @@ input[type=number] {
   width: 48px;
   padding: 0 10px;
   text-align: center;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
@@ -487,12 +483,42 @@ input {
   max-width: 0px;
 }
 .home .paySection .content .confirmation {
+  gap: 24px;
   width: 409px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.home .paySection .content .confirmation .back {
+  margin-bottom: 14px;
+}
+.home .paySection .content .confirmation .top-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home .paySection .content .confirmation .top-control h1 {
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+.home .paySection .content .confirmation .top-control .add-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #EA7C69;
+  transform: translateY(-3px);
 }
 .home .paySection .content .confirmation .list {
   height: 544px;
   padding: 24px 0;
+}
+.home .paySection .content .confirmation .footer p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
 }
 .home .paySection .content::before {
   content: "";
@@ -503,16 +529,80 @@ input {
   position: absolute;
   background: rgba(0, 0, 0, 0.7);
 }
-.home .paySection .payment {
-  width: 406px;
+.home .paySection .content .payment {
+  gap: 24px;
+  width: 409px;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #393C49;
 }
-.home .paySection .payment .control {
+.home .paySection .content .payment .header {
+  margin-top: 40px;
+}
+.home .paySection .content .payment .header h1 {
+  margin-bottom: 8px;
+}
+.home .paySection .content .payment .payment-form {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.home .paySection .content .payment .payment-form .divider {
+  margin-top: 8px;
+}
+.home .paySection .content .payment .payment-form .payment-methods {
+  gap: 8px;
+  display: flex;
+}
+.home .paySection .content .payment .payment-form .payment-methods button {
+  width: 101px;
+  height: 64px;
+  border-radius: 8px;
+  border: 1px solid #393C49;
+}
+.home .paySection .content .payment .payment-form label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+}
+.home .paySection .content .payment .payment-form input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 0 14px;
+  background: #2D303E;
+  height: 48px;
+  font-size: 14px;
+  line-height: 140%;
+  border-radius: 8px;
+  border: 1px solid #393C49;
+}
+.home .paySection .content .payment .payment-form select {
+  width: 173px;
+  display: block;
+  padding: 0 14px;
+  margin-top: 8px;
+  color: #ffffff;
+  background: #1F1D2B;
+  height: 48px;
+  font-size: 14px;
+  line-height: 140%;
+  border-radius: 8px;
+  border: 1px solid #393C49;
+}
+.home .paySection .content .payment .payment-form .flex {
+  gap: 13px;
+  display: flex;
+}
+.home .paySection .content .payment .control {
+  margin-top: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.home .paySection .payment .control .btn {
+.home .paySection .content .payment .control .btn {
   width: 175px;
   height: 48px;
   font-style: normal;
@@ -521,10 +611,10 @@ input {
   line-height: 140%;
   border-radius: 8px;
 }
-.home .paySection .payment .control .confirm {
+.home .paySection .content .payment .control .confirm {
   background-color: #EA7C69;
 }
-.home .paySection .payment .control .cancel {
+.home .paySection .content .payment .control .cancel {
   color: #EA7C69;
   border: 1px solid #EA7C69;
 }

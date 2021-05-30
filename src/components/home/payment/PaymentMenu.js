@@ -1,4 +1,5 @@
 import Confirmation from './Confimation';
+import Payment from './Payment';
 
 const PaymentMenu = ({
   orders, setOrders, openPayment, setOpenPayment,
@@ -16,19 +17,7 @@ const PaymentMenu = ({
           handleClosePayment={handleClosePayment}
         />
 
-        <div className="payment">
-          <h1>Payment</h1>
-
-          <div className="control">
-            <button
-              className="btn cancel"
-              onClick={handleClosePayment}
-            >
-              Cancel
-            </button>
-            <button className="btn confirm">Confirm Payment</button>
-          </div>
-        </div>
+        <Payment handleClosePayment={handleClosePayment} />
       </div>
     </section>
   );

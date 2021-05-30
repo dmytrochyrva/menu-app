@@ -15,7 +15,6 @@ $back-filter: rgba(0,0,0,0.7);
 $transparent-primary: #ea7c6952;
 
 body {
-    padding: 20px;
     background: gray;
 }
 
@@ -26,13 +25,11 @@ h1 {
 }
 
 h2 {
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
 }
 h3 {
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 130%;
@@ -61,7 +58,6 @@ input[type="number"]{
     width: 48px;
     padding: 0 10px;
     text-align: center;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
